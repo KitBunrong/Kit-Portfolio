@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- Particles Home Page -->
+    <!-- ^==== Particle Home page ==== -->
     <div class="particles-wrapper particles">
       <vue-particles
         color="#ffffff"
@@ -21,15 +21,21 @@
       >
       </vue-particles>
 
-      <div class="content pa-sm-8 pa-4 d-flex align-center justify-sm-space-between justify-center flex-sm-row flex-column">
+      <!-- ^==== Home Page ==== -->
+      <div
+        id="home"
+        class="content pa-sm-8 pa-4 d-flex align-center justify-sm-space-between justify-center flex-sm-row flex-column"
+      >
         <v-card class="mt-sm-0 transparent" text rounded="0">
           <v-card-title>
             <h1 class="text-xl-h1 text-lg-h2 text-sm-h3 text-h4 title">
-              <span style="font-family: 'Merienda', cursive;">This is</span>
-              <span style="font-family: 'Merienda', cursive;">Bunrong KIT</span>
-              <v-card-subtitle class="text-overline pa-0 text-right mr-1 mt-2 primary--text">
+              <span style="font-family: 'Merienda', cursive">This is</span>
+              <span style="font-family: 'Merienda', cursive">Bunrong KIT</span>
+              <v-card-subtitle
+                class="text-overline pa-0 text-right mr-1 mt-2 primary--text"
+              >
                 <span>¯\_(ツ)_/¯ aka (gary)</span>
-              </v-card-subtitle> 
+              </v-card-subtitle>
             </h1>
           </v-card-title>
           <v-card-subtitle class="text-overline subtitle">
@@ -37,54 +43,79 @@
           </v-card-subtitle>
           <v-card-text class="text-body-1 subtitle">
             Click
-            <a href="#">here</a>
+            <a href="https://github.com/KitBunrong">here</a>
             to view my work!
           </v-card-text>
         </v-card>
-        <v-btn href="https://github.com/KitBunrong" target="_blank" class="kit-github mt-sm-0" x-small text>connect with kit</v-btn>
+        <v-btn
+          href="https://github.com/KitBunrong"
+          target="_blank"
+          class="kit-github mt-sm-0"
+          x-small
+          text
+        >
+          <span>connect with kit</span>
+        </v-btn>
       </div>
     </div>
 
-    <!-- Skills -->
-    <div class="black pt-6">
+    <!-- ^==== Skills ==== -->
+    <div id="skill" class="black pt-6">
       <v-container>
         <h3 class="text-h5 text-uppercase">Skills</h3>
       </v-container>
       <v-container>
         <v-row>
-
           <v-col class="col-12">
             <h4 class="text-h6 text-uppercase text-center mb-4">frontend</h4>
             <v-chip-group class="mb-4" column>
-              <v-tooltip top color="black" v-for="(frontend, i) in frontends" :key="i">
+              <v-tooltip
+                top
+                color="black"
+                v-for="(frontend, i) in frontends"
+                :key="i"
+              >
                 <template #activator="{ on }">
-                  <v-chip 
-                    class="gray darken-3 aos-init aos-animate" 
-                    :href="frontend.to" 
-                    :data-aos-delay="i*100" data-aos="fade-up"
-                    v-on="on"  
+                  <v-chip
+                    class="gray darken-3 aos-init aos-animate"
+                    :href="frontend.to"
+                    :data-aos-delay="i * 100"
+                    data-aos="fade-up"
+                    v-on="on"
                     label
-                  > 
+                  >
                     <v-icon :class="frontend.icons" left></v-icon>
-                    {{frontend.name}} 
+                    {{ frontend.name }}
                   </v-chip>
                 </template>
-                <span>{{frontend.tooltip}}</span>
+                <span>{{ frontend.tooltip }}</span>
               </v-tooltip>
             </v-chip-group>
           </v-col>
-          
+
           <v-col class="col-12">
             <h4 class="text-h6 text-uppercase text-center mb-4">backend</h4>
             <v-chip-group class="mb-4" column>
-              <v-tooltip top color="black" v-for="(backend, i) in backends" :key="i">
+              <v-tooltip
+                top
+                color="black"
+                v-for="(backend, i) in backends"
+                :key="i"
+              >
                 <template #activator="{ on }">
-                  <v-chip class="gray darken-3 aos-init aos-animate" :data-aos-delay="i*100" data-aos="fade-up" v-on="on"  :href="backend.to" label> 
+                  <v-chip
+                    class="gray darken-3 aos-init aos-animate"
+                    :data-aos-delay="i * 100"
+                    data-aos="fade-up"
+                    v-on="on"
+                    :href="backend.to"
+                    label
+                  >
                     <v-icon :class="backend.icons" left></v-icon>
-                    {{backend.name}} 
+                    {{ backend.name }}
                   </v-chip>
                 </template>
-                <span>{{backend.tooltip}}</span>
+                <span>{{ backend.tooltip }}</span>
               </v-tooltip>
             </v-chip-group>
           </v-col>
@@ -94,12 +125,19 @@
             <v-chip-group class="mb-4" column>
               <v-tooltip top color="black" v-for="(tool, i) in tools" :key="i">
                 <template #activator="{ on }">
-                  <v-chip class="gray darken-3 aos-init aos-animate" :data-aos-delay="i*100" data-aos="fade-up" v-on="on"  :href="tool.to" label> 
+                  <v-chip
+                    class="gray darken-3 aos-init aos-animate"
+                    :data-aos-delay="i * 100"
+                    data-aos="fade-up"
+                    v-on="on"
+                    :href="tool.to"
+                    label
+                  >
                     <v-icon :class="tool.icons" left></v-icon>
-                    {{tool.name}} 
+                    {{ tool.name }}
                   </v-chip>
                 </template>
-                <span>{{tool.tooltip}}</span>
+                <span>{{ tool.tooltip }}</span>
               </v-tooltip>
             </v-chip-group>
           </v-col>
@@ -109,113 +147,118 @@
             <v-chip-group class="mb-4" column>
               <v-tooltip top color="black" v-for="(cms, i) in cmss" :key="i">
                 <template #activator="{ on }">
-                  <v-chip class="gray darken-3 aos-init aos-animate" :data-aos-delay="i*100" data-aos="fade-up" v-on="on"  :href="cms.to" label> 
+                  <v-chip
+                    class="gray darken-3 aos-init aos-animate"
+                    :data-aos-delay="i * 100"
+                    data-aos="fade-up"
+                    v-on="on"
+                    :href="cms.to"
+                    label
+                  >
                     <v-icon :class="cms.icons" left></v-icon>
-                    {{cms.name}} 
+                    {{ cms.name }}
                   </v-chip>
                 </template>
-                <span>{{cms.tooltip}}</span>
+                <span>{{ cms.tooltip }}</span>
               </v-tooltip>
             </v-chip-group>
           </v-col>
         </v-row>
       </v-container>
     </div>
-
   </div>
 </template>
 
 <script>
-
 export default {
   data() {
     return {
-      frontends:[
+      frontends: [
         {
           to: 'https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5',
           icons: 'mdi mdi-language-html5',
-          name: "HTML",
-          tooltip: 'The bare bone of Webpage'
+          name: 'HTML',
+          tooltip: 'The bare bone of Webpage',
         },
         {
           to: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
           icons: 'mdi mdi-language-css3',
-          name: "CSS3",
-          tooltip: 'The skin of the Webpage'
+          name: 'CSS3',
+          tooltip: 'The skin of the Webpage',
         },
         {
           to: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
           icons: 'mdi mdi-language-javascript',
-          name: "JavaScript",
-          tooltip: 'The hearth of Javascript'
+          name: 'JavaScript',
+          tooltip: 'The hearth of Javascript',
         },
         {
           to: 'https://vuejs.org/',
           icons: 'mdi mdi-vuejs',
-          name: "VueJS",
-          tooltip: 'Progressive Javascript Framework'
+          name: 'VueJS',
+          tooltip: 'Progressive Javascript Framework',
         },
         {
           to: 'https://en.wikipedia.org/wiki/Representational_state_transfer',
           icons: '',
-          name: "REST API",
-          tooltip: 'Application Programming language(API)'
+          name: 'REST API',
+          tooltip: 'Application Programming language(API)',
         },
         {
           to: 'https://sass-lang.com/',
           icons: 'mdi mdi-sass',
-          name: "Sass",
-          tooltip: 'Stylesheet language compiled to CSS'
+          name: 'Sass',
+          tooltip: 'Stylesheet language compiled to CSS',
         },
         {
           to: 'https://nuxtjs.org/',
           icons: 'mdi mdi-nuxt',
-          name: "NuxtJS",
-          tooltip: 'Framework using Vue'
+          name: 'NuxtJS',
+          tooltip: 'Framework using Vue',
         },
         {
           to: 'https://en.wikipedia.org/wiki/Responsive_web_design',
           icons: 'mdi mdi-responsive',
-          name: "Responsive",
-          tooltip: 'Design Web layouts for differnt screen size'
+          name: 'Responsive',
+          tooltip: 'Design Web layouts for differnt screen size',
         },
         {
           to: 'https://getbootstrap.com/',
           icons: 'mdi mdi-bootstrap',
-          name: "BootStrap",
-          tooltip: 'CSS Framework'
+          name: 'BootStrap',
+          tooltip: 'CSS Framework',
         },
         {
           to: 'https://tailwindcss.com/',
           icons: 'mdi mdi-tailwind',
-          name: "TailwindCSS",
-          tooltip: 'CSS Framework'
+          name: 'TailwindCSS',
+          tooltip: 'CSS Framework',
         },
       ],
       backends: [
         {
           to: 'https://www.mysql.com/',
           icons: 'mdi mdi-database-search',
-          name: "MYSQL",
-          tooltip: 'Open-source database management system'
+          name: 'MYSQL',
+          tooltip: 'Open-source database management system',
         },
         {
           to: 'https://www.php.net/',
           icons: 'mdi mdi-language-php',
-          name: "PHP",
-          tooltip: 'Side-server scripting language'
+          name: 'PHP',
+          tooltip: 'Side-server scripting language',
         },
         {
           to: 'https://redis.io/',
           icons: '',
           name: 'Redis',
-          tooltip: 'In-memory data structure'
+          tooltip: 'In-memory data structure',
         },
         {
           to: 'https://www.rabbitmq.com/',
           icons: '',
           name: 'RabbitMQ',
-          tooltip: 'Message-broker'
+          tooltip: 'Message-broker',
         },
       ],
       tools: [
@@ -223,84 +266,82 @@ export default {
           to: 'https://git-scm.com/',
           icons: 'mdi mdi-git',
           name: 'Git',
-          tooltip: 'Source-version control system'
+          tooltip: 'Source-version control system',
         },
         {
           to: 'https://www.docker.com/',
           icons: 'mdi mdi-docker',
           name: 'Docker',
-          tooltip: 'Containerized applications'
+          tooltip: 'Containerized applications',
         },
         {
           to: 'https://www.nginx.com/',
           icons: '',
           name: 'Nginx',
-          tooltip: 'Web Server'
+          tooltip: 'Web Server',
         },
         {
           to: 'https://www.apache.org/',
           icons: '',
           name: 'Apache',
-          tooltip: 'Web Server'
+          tooltip: 'Web Server',
         },
         {
           to: 'https://www.npmjs.com/',
           icons: 'mdi mdi-npm',
           name: 'NPM',
-          tooltip: 'Node package manager'
+          tooltip: 'Node package manager',
         },
         {
           to: 'https://yarnpkg.com/',
           icons: '',
           name: 'Yarn',
-          tooltip: 'Node package manager'
+          tooltip: 'Node package manager',
         },
       ],
-      cmss:[
+      cmss: [
         {
           to: 'https://wordpress.org/',
           icons: 'mdi mdi-wordpress',
           name: 'WordPress',
-          tooltip: 'Popular open-source CMS'
+          tooltip: 'Popular open-source CMS',
         },
         {
           to: 'https://ghost.org/',
           icons: '',
           name: 'Ghost',
-          tooltip: 'Open-source CMS using Node.js'
+          tooltip: 'Open-source CMS using Node.js',
         },
         {
           to: 'https://directus.io/',
           icons: '',
           name: 'Directus',
-          tooltip: 'Open-source headless CMS'
+          tooltip: 'Open-source headless CMS',
         },
         {
           to: 'https://getcockpit.com/',
           icons: '',
           name: 'Cockpit',
-          tooltip: 'Open-source headless CMS'
+          tooltip: 'Open-source headless CMS',
         },
       ],
     }
   },
-  components: {
-
-  }
+  components: {},
 }
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@700&family=Patrick+Hand&display=swap');
 
 .particles {
   width: 100%;
   height: 100vh;
-  background: linear-gradient(180deg,#000,#000 44%,transparent);
+  background: linear-gradient(180deg, #000, #000 44%, transparent);
   margin-bottom: 40px;
 }
 
-#particles-js{
+#particles-js {
   height: 100%;
 }
 
@@ -308,7 +349,7 @@ export default {
   position: relative;
 }
 
-.content{
+.content {
   pointer-events: none;
   position: absolute;
   top: 0;
@@ -320,15 +361,14 @@ export default {
 }
 
 .particles-wrapper .content a {
-    pointer-events: auto;
+  pointer-events: auto;
 }
 
-.kit-github{
+.kit-github {
   align-self: flex-end;
 }
 
 .v-slide-group__content {
-    justify-content: center;
+  justify-content: center;
 }
-
 </style>
