@@ -2,24 +2,26 @@
   <div>
     <!-- ^==== Particle Home page ==== -->
     <div class="particles-wrapper particles">
-      <vue-particles
-        color="#ffffff"
-        :particleOpacity="0.7"
-        :particlesNumber="120"
-        shapeType="circle"
-        :particleSize="4"
-        linesColor="#cccccc"
-        :linesWidth="1"
-        :lineLinked="true"
-        :lineOpacity="0.4"
-        :linesDistance="150"
-        :moveSpeed="4"
-        :hoverEffect="true"
-        hoverMode="grab"
-        :clickEffect="true"
-        clickMode="push"
-      >
-      </vue-particles>
+      <client-only>
+        <vue-particles
+          color="#ffffff"
+          :particleOpacity="0.7"
+          :particlesNumber="120"
+          shapeType="circle"
+          :particleSize="4"
+          linesColor="#cccccc"
+          :linesWidth="1"
+          :lineLinked="true"
+          :lineOpacity="0.4"
+          :linesDistance="150"
+          :moveSpeed="4"
+          :hoverEffect="true"
+          hoverMode="grab"
+          :clickEffect="true"
+          clickMode="push"
+        >
+        </vue-particles>
+      </client-only>
 
       <!-- ^==== Home Page ==== -->
       <div
