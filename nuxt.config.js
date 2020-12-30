@@ -62,5 +62,31 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     // transplie: ['vue-instantsearch', 'instantsearch.js/es']
+    // maxChunkSize: 300000,
+    extend(config, ctx) {
+      // function resolve(dir) {
+      //   return path.join(__dirname, '..', dir)
+      // }
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          // include: [
+          //   resolve('src'),
+          //   resolve('test'),
+          //   resolve('node_modules/vue-particles'),
+          // ],
+          exclude: /(node_modules)/,
+          options: {
+            fix: true,
+          },
+        })
+      }
+    },
   },
+
+  // For static site.
+  target: 'static',
 }
